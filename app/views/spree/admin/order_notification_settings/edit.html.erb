@@ -1,0 +1,66 @@
+<!-- Menu -->
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+
+<!-- Meta -->
+<% content_for :page_title do %>
+  <%= Spree.t(:order_notification) %>
+<% end %>
+
+
+<!-- Form -->
+<%= form_tag admin_order_notification_settings_path, method: :put do %>
+  <fieldset class="general">
+
+    <!-- Legend -->
+    <legend align="center"><%= Spree.t(:order_complete_notification_mailer)%></legend>
+
+    <!-- Enabled -->
+    <div class="field">
+      <%= label_tag(:mailer_complete_enabled) do %>
+        <%= preference_field_tag(:mailer_complete_enabled, SpreeOrderNotification::Config[:mailer_complete_enabled], type: :boolean) %>
+        <%= Spree.t(:enable_order_complete_notification_mailer) %>
+      <% end %>
+    </div><!-- /.field -->
+
+    <!-- To -->
+    <div class="field">
+      <%= label_tag(:mailer_complete_to, Spree.t(:order_notification_mailer_to)) %>
+      <br />
+      <%= preference_field_tag(:mailer_complete_to, SpreeOrderNotification::Config[:mailer_complete_to], class: 'control-form') %>
+      <br />
+      <p class="help-block"><%= Spree.t(:order_notification_mailer_help) %></p>
+    </div><!-- /.field -->
+
+    <!-- CC -->
+    <div class="field">
+      <%= label_tag(:mailer_complete_cc, Spree.t(:order_notification_mailer_cc)) %>
+      <br />
+      <%= preference_field_tag(:mailer_complete_cc, SpreeOrderNotification::Config[:mailer_complete_cc], class: 'control-form') %>
+      <br />
+      <p class="help-block"><%= Spree.t(:order_notification_mailer_help) %></p>
+    </div><!-- /.field -->
+
+    <!-- BCC -->
+    <div class="field">
+      <%= label_tag(:mailer_complete_bcc, Spree.t(:order_notification_mailer_bcc)) %>
+      <br />
+      <%= preference_field_tag(:mailer_complete_bcc, SpreeOrderNotification::Config[:mailer_complete_bcc], class: 'control-form') %>
+      <br />
+      <p class="help-block"><%= Spree.t(:order_notification_mailer_help) %></p>
+    </div><!-- /.field -->
+
+    <!-- From -->
+    <div class="field">
+      <%= label_tag(:mailer_complete_from, Spree.t(:order_notification_mailer_from)) %>
+      <br />
+      <%= preference_field_tag(:mailer_complete_from, SpreeOrderNotification::Config[:mailer_complete_from], class: 'control-form') %>
+    </div><!-- /.field -->
+
+    <!-- Actions -->
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button Spree.t('actions.update'), 'update' %>
+    </div><!-- /.actions -->
+
+  </fieldset><!-- /.general -->
+<% end %>

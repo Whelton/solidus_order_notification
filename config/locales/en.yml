@@ -1,0 +1,15 @@
+---
+en:
+  spree:
+    enable_order_complete_notification_mailer: Enable Order Complete Notification Mailer
+    order_complete_notification_mailer: Order Complete Notification Mailer
+    order_notification: Order Notification
+    order_notification_error_update_invalid_format: ! 'Could not update Order Notification Settings, %{preference} preference has invalid format!'
+    order_notification_error_mailer_to_value_required: 'To requires a value'
+    order_notification_error_mailer_from_invalid_email: 'From is an invalid email address'
+    order_notification_mailer_help: "Comma seperated email addresses, eg 'admin@example.com,another@example.com,one_more@example.com'. Leave blank for none."
+    order_notification_mailer_to: To
+    order_notification_mailer_cc: CC
+    order_notification_mailer_bcc: BCC
+    order_notification_mailer_from: From
+    order_notification_mailer_complete_subject: ! '%{start} New Order %{end}'

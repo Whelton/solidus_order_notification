@@ -1,0 +1,3 @@
+module SpreeOrderNotification
+
+end
